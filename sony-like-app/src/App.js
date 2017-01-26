@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const WINDOW = 1;
 const FAKE_DATA = [];
 for (let i = 0; i < 100; i++) {
   FAKE_DATA.push(i);
@@ -44,7 +45,7 @@ class App extends Component {
   renderList() {
     const { index } = this.state;
     const list = [];
-    for (let i = index - 1; i <= index + 1; i++) {
+    for (let i = index - WINDOW; i <= index + WINDOW; i++) {
       if (i < 0) continue;
       if (i > FAKE_DATA.length) break;
       list.push((
